@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
 import ReactPaginate from 'react-paginate';
+import 'react-paginate/theme/basic/react-paginate.css';
 import SearchBar from '../SearchBar/SearchBar';
 import { fetchMovies } from '../../services/movieService';
 import type { Movie } from '../../types/movie';
@@ -10,7 +11,6 @@ import Loader from '../Loader/Loader';
 import MovieModal from '../MovieModal/MovieModal';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-import './App.module.css';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
