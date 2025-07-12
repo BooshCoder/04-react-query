@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
 import ReactPaginate from 'react-paginate';
-import 'react-paginate/theme/basic/react-paginate.css';
 import SearchBar from '../SearchBar/SearchBar';
 import { fetchMovies } from '../../services/movieService';
 import type { Movie } from '../../types/movie';
@@ -10,6 +9,7 @@ import MovieGrid from '../MovieGrid/MovieGrid';
 import Loader from '../Loader/Loader';
 import MovieModal from '../MovieModal/MovieModal';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import styles from './App.module.css';
 
 
 function App() {
@@ -74,8 +74,8 @@ function App() {
               marginPagesDisplayed={1}
               onPageChange={handlePageChange}
               forcePage={page - 1}
-              containerClassName="pagination"
-              activeClassName="active"
+              containerClassName={styles.pagination}
+              activeClassName={styles.active}
               nextLabel="→"
               previousLabel="←"
             />
